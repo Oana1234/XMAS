@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#010131"
+    tools:context="com.example.oana_maria.xmas.ui.MainActivity"
+        android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/image_categori"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/motto"
+
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:layout_alignBottom="@id/image_categori"
+            android:background="#820d0d0d"
+            >
+
+            <TextView
+                android:id="@+id/title_categ"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="HOROSCOPUL ZILEI"
+                android:textColor="#f9e7e7"
+                android:textSize="17sp"
+          />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/image_categorie2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/food2"
+
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:layout_alignBottom="@id/image_categorie2"
+            android:background="#820d0d0d"
+            >
+
+            <TextView
+                android:id="@+id/title_categ2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#f9e7e7"
+                android:textSize="17sp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="AMINTIRI"
+                />
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/image_categorie3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/education5"
+
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:layout_alignBottom="@id/image_categorie3"
+            android:background="#820d0d0d"
+            >
+
+            <TextView
+                android:id="@+id/title_categ3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#f9e7e7"
+                android:textSize="17sp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="MOTTO-UL ZILEI"
+                />
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    </LinearLayout>
+
+
