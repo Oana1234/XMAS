@@ -22,10 +22,10 @@ import java.util.List;
 
 public class GalleryHelper extends RecyclerView.Adapter<GalleryHelper.MyViewHolder> {
 
-    private List<Image> images;
+    private List<Integer> images;
     private Context mContext;
 
-    public GalleryHelper(Context context, List<Image> images) {
+    public GalleryHelper(Context context, List<Integer> images) {
         mContext = context;
         this.images = images;
     }
@@ -39,7 +39,7 @@ public class GalleryHelper extends RecyclerView.Adapter<GalleryHelper.MyViewHold
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        Image image = images.get(position);
+        Integer image = images.get(position);
 
 
 
@@ -114,7 +114,7 @@ public class GalleryHelper extends RecyclerView.Adapter<GalleryHelper.MyViewHold
         public MyViewHolder(View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.image_square);
-        //    imageView.setImageResource(R.drawable.a1);
+            //    imageView.setImageResource(R.drawable.a1);
         }
     }
 }
