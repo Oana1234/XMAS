@@ -6,31 +6,38 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.widget.Toast;
 
-import com.example.oana_maria.xmas.ui.MottoActivity;
+import static android.content.Context.MODE_PRIVATE;
+import static com.example.oana_maria.xmas.ui.MottoActivity.MyPREFERENCES;
 
 /**
- * Created by Oana-Maria on 22/12/2017.
+ * Created by Oana-Maria on 26/12/2017.
  */
 
 public class AlarmMottoReceiver extends BroadcastReceiver {
 
+     SharedPreferences pref;
+     int position;
+     // MyInterface myInterface;
 
-    private  SharedPreferences sharedPosition;
-    private int i;
-
+//     public interface MyInterface{
+//         public void myFunction();
+//     }
 
     @Override
     public void onReceive(Context context, Intent intent) {
 
-        Toast.makeText(context, "New Motto", Toast.LENGTH_LONG).show();
-        sharedPosition.getInt(MottoActivity.MyPREFERENCES,i );
-        i++;
+        pref = context.getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+        position = pref.getInt("pos", 0);
 
-        SharedPreferences.Editor edit = sharedPosition.edit();
-        edit.putInt(MottoActivity.MyPREFERENCES, i);
-        edit.commit();
+        position++;
+        if (position>=47){
+            position=0;
+        }
 
+        SharedPreferences.Editor editor = context.getSharedPreferences(MyPREFERENCES, MODE_PRIVATE).edit();
+         editor.putInt("pos", position);
+         editor.apply();
 
-
+        // myInterface.myFunction();
     }
 }

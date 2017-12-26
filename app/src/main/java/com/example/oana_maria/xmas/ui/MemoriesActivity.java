@@ -2,7 +2,6 @@ package com.example.oana_maria.xmas.ui;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
@@ -29,17 +28,13 @@ public class MemoriesActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recycler_view);
         pDialog = new ProgressDialog(this);
-        images = new ArrayList<>(Arrays.asList(R.drawable.a1,R.drawable.a2,R.drawable.a3,R.drawable.a4,
-                R.drawable.a5,R.drawable.a6, R.drawable.a7,R.drawable.a8,R.drawable.a9,R.drawable.a10,
-                R.drawable.a11,R.drawable.a12, R.drawable.a13, R.drawable.a14, R.drawable.a15, R.drawable.a16));
-        mAdapter = new GalleryHelper(getApplicationContext(), images);
+        images = new ArrayList<>(Arrays.asList(R.drawable.education5));
 
+        mAdapter = new GalleryHelper(getApplicationContext(), images);
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getApplicationContext(), 2);
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(mAdapter);
-
-
 
           recyclerView.addOnItemTouchListener(new GalleryHelper.RecycleTouchListener(getApplicationContext(), recyclerView, new GalleryHelper.ClickListener() {
             @Override

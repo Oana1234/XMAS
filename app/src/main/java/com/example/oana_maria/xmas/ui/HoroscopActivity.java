@@ -36,14 +36,14 @@ public class HoroscopActivity extends AppCompatActivity {
         imageViewLine = findViewById(R.id.line);
         txtHoroscope = findViewById(R.id.txt_horoscope);
 
-        final MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.lionsound);
+       // final MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.lionsound);
 
-        btnRoar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mediaPlayer.start();
-            }
-        });
+//        btnRoar.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                mediaPlayer.start();
+//            }
+//        });
     }
 
     @Override
@@ -60,11 +60,12 @@ public class HoroscopActivity extends AppCompatActivity {
 
                 try {
 
-                    Document doc = Jsoup.connect("http://www.eastrolog.ro/horoscop-zilnic/horoscop-leu.php").get();
+                    Document doc = Jsoup.connect("http://www.eastrolog.ro/horoscop-zilnic/horoscop-varsator.php").get();
                     //       String title = doc.title();
                     String body = doc.body().text();
-                    String word = "Leul azi";
-                    String word2 = "Horoscop Leu ieri";
+                    body.replace("ă","a");
+                    String word = "Vărsătorul azi";
+                    String word2 = "Horoscop Vărsător ieri";
                     String horoscop;
                     int position1 = body.indexOf(word);
                     int position2 = body.indexOf(word2);

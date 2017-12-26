@@ -19,7 +19,7 @@
         <activity android:name=".ui.HoroscopActivity" />
         <activity android:name=".ui.MemoriesActivity" />
         <activity android:name=".ui.MottoActivity"></activity>
-        <receiver android:name=".taskscheduler.AlarmMottoReceiver"/>
+        <receiver android:name=".taskscheduler.AlarmMottoReceiver"></receiver>
 
     </application>
 

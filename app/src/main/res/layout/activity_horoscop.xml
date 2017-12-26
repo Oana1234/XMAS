@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.oana_maria.xmas.ui.HoroscopActivity"
-    android:background="#a2bbde"
+
     >
 
 
@@ -12,7 +12,7 @@
         android:id="@+id/btn_roar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/lion"
+        android:background="@drawable/varsator"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         />
