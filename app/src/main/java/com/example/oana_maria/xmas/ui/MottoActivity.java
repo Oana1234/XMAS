@@ -53,7 +53,7 @@ public class MottoActivity extends AppCompatActivity {
 
         SharedPreferences.OnSharedPreferenceChangeListener listener = new SharedPreferences.OnSharedPreferenceChangeListener() {
             public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
-                changeMotto();
+
                 position = pref.getInt("pos", 0);
                 txtMotto.setText(lista.get(position));
             }
@@ -73,12 +73,12 @@ public class MottoActivity extends AppCompatActivity {
         manager.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), (1000 * 30), pendingIntent);
     }
 
-//    protected void onResume() {
-//        super.onResume();
-//        changeMotto();
-//        position = pref.getInt("pos", 0);
-//        txtMotto.setText(lista.get(position));
-//    }
+    protected void onResume() {
+        super.onResume();
+        changeMotto();
+        position = pref.getInt("pos", 0);
+        txtMotto.setText(lista.get(position));
+    }
 
 
 
