@@ -1,27 +1,23 @@
 package com.example.oana_maria.xmas.taskscheduler;
-
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.widget.Toast;
-
 import static android.content.Context.MODE_PRIVATE;
 import static com.example.oana_maria.xmas.ui.MottoActivity.MyPREFERENCES;
-
 /**
  * Created by Oana-Maria on 26/12/2017.
  */
 
 public class AlarmMottoReceiver extends BroadcastReceiver {
 
+    public interface MyInterface{
+        void myFunction();
+    }
+
      SharedPreferences pref;
      int position;
-     // MyInterface myInterface;
-
-//     public interface MyInterface{
-//         public void myFunction();
-//     }
+     MyInterface myInterface;
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -38,6 +34,6 @@ public class AlarmMottoReceiver extends BroadcastReceiver {
          editor.putInt("pos", position);
          editor.apply();
 
-        // myInterface.myFunction();
+         myInterface.myFunction();
     }
 }

@@ -21,7 +21,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-public class MottoActivity extends AppCompatActivity {
+public class MottoActivity extends AppCompatActivity implements AlarmMottoReceiver.MyInterface {
 
     TextView txtMotto;
     BufferedReader reader;
@@ -52,24 +52,28 @@ public class MottoActivity extends AppCompatActivity {
         }
     }
 
-    private void changeMotto(boolean b1) {
+    private void changeMotto() {
         AlarmManager manager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         PendingIntent pendingIntent;
         Intent myIntent;
 
         myIntent = new Intent(MottoActivity.this, AlarmMottoReceiver.class);
         pendingIntent = PendingIntent.getBroadcast(this, 0, myIntent, 0);
-        manager.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), (1000 * 60 * 60 * 24), pendingIntent);
+        manager.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), (1000 * 30), pendingIntent);
     }
 
     protected void onResume() {
         super.onResume();
-        changeMotto(false);
+        changeMotto();
         position = pref.getInt("pos", 0);
         txtMotto.setText(lista.get(position));
     }
 
-//    @Override
-//    public void myFunction() {
-//    }
+    @Override
+    public void myFunction() {
+        position = pref.getInt("pos", 0);
+        txtMotto.setText(lista.get(position));
+
+    }
+
 }
