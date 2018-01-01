@@ -11,13 +11,9 @@ import static com.example.oana_maria.xmas.ui.MottoActivity.MyPREFERENCES;
 
 public class AlarmMottoReceiver extends BroadcastReceiver {
 
-    public interface MyInterface{
-        void myFunction();
-    }
 
      SharedPreferences pref;
      int position;
-     MyInterface myInterface;
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -34,6 +30,5 @@ public class AlarmMottoReceiver extends BroadcastReceiver {
          editor.putInt("pos", position);
          editor.apply();
 
-         myInterface.myFunction();
     }
 }

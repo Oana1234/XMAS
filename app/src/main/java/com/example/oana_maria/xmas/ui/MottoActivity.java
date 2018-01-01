@@ -21,7 +21,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-public class MottoActivity extends AppCompatActivity implements AlarmMottoReceiver.MyInterface {
+public class MottoActivity extends AppCompatActivity {
 
     TextView txtMotto;
     BufferedReader reader;
@@ -50,6 +50,17 @@ public class MottoActivity extends AppCompatActivity implements AlarmMottoReceiv
         } catch (IOException ioe) {
             ioe.printStackTrace();
         }
+
+        SharedPreferences.OnSharedPreferenceChangeListener listener = new SharedPreferences.OnSharedPreferenceChangeListener() {
+            public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
+                changeMotto();
+                position = pref.getInt("pos", 0);
+                txtMotto.setText(lista.get(position));
+            }
+        };
+
+        pref.registerOnSharedPreferenceChangeListener(listener);
+
     }
 
     private void changeMotto() {
@@ -62,18 +73,13 @@ public class MottoActivity extends AppCompatActivity implements AlarmMottoReceiv
         manager.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), (1000 * 30), pendingIntent);
     }
 
-    protected void onResume() {
-        super.onResume();
-        changeMotto();
-        position = pref.getInt("pos", 0);
-        txtMotto.setText(lista.get(position));
-    }
+//    protected void onResume() {
+//        super.onResume();
+//        changeMotto();
+//        position = pref.getInt("pos", 0);
+//        txtMotto.setText(lista.get(position));
+//    }
 
-    @Override
-    public void myFunction() {
-        position = pref.getInt("pos", 0);
-        txtMotto.setText(lista.get(position));
 
-    }
 
 }
